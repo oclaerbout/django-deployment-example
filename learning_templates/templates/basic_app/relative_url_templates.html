@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h1>WELCOME TO RELATIVE URL TEMPLATES</h1>
+        <!--
+        Tot op heden:
+        <a href="basic_app/other.html">The other page</a>
+        DIT VERVANGEN WE met template tagging
+        -->
+        <a href="{% url 'basic_app:other' %}">The other page</a>
+        <!--
+        {% url 'basic_app:other' %}:
+        basic_app: zie urls.py: app_name = 'basic_app' dus niet van folder name!
+        In app urls.py moet je dus een app name definiëren!
+        other: zie urls.py name = 'other'!
+
+        OPMERKING: vaak fouten op: {% url 'basic_app:other' %}
+        'basic_app:other' en NIET '  basic_app:other' of 'basic_app:other '!!!
+
+        Hoe kan je nu links naar andere pagina's zoals de admin pagina invoegen?
+        -->
+        <a href="{% url "admin:index"  %}">LINK TO ADMIN</a>
+        <a href="{% url 'index' %}">LINK TO INDEX!</a>
+</body>
+</html>
+
